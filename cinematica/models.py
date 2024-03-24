@@ -54,8 +54,8 @@ class Seat(models.Model):
 
 
 class Ticket(models.Model):
-    seat = models.ForeignKey(Seat, on_delete=models.CASCADE)
     show = models.ForeignKey(Showtime, on_delete=models.CASCADE)
+    seat = models.ForeignKey(Seat, on_delete=models.CASCADE)
     price = models.PositiveIntegerField()
     is_reserved = models.BooleanField(default=False)
 
